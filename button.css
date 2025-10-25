@@ -1,0 +1,28 @@
+button {
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 15px;
+}
+button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#viewGoods {
+  width: 400px;
+  height: 50px;
+  margin: 2px 30px 10px 30px;
+  background-color: #4285f4;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+}
+#viewGoods:hover {
+  background-color: #6ca4ff;
+}
+.normalbtn {
+  width: fit-content;
+  outline: none;
+  border: none;
+  background-color: #eaf3ff;
+}

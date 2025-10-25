@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+       <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DGD – Streamlined delivery and storage management for businesses."
+    />
+    <title>DGD | Authentification</title>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <main>
+      <!--COMPANY SIGNUP FORM-->
+        <section id="companySignup"  class="form-section">
+          <div class="topText">
+            <h1>Company Information</h1>
+            <p>Complete your Profile</p>
+          </div>
+          <form id="companySignupForm">
+            <div class="form-container">
+              <div class="double-input">
+                <div>
+                  <label for="companyNameInput">Company Name</label>
+                  <input
+                    type="text"
+                    id="companyNameInput"
+                    name="companyName"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="contactPersonInput">Contact Person</label>
+                  <input
+                    type="text"
+                    required
+                    id="contactPersonInput"
+                    name="contactPerson"
+                  />
+                </div>
+              </div>
+              <div class="double-input">
+                <div id="phone">
+                  <label for="phoneNumberInput">Phone Number </label>
+                  <input
+                    type="tel"
+                    id="phoneNumberInput"
+                    name="phoneNumber"
+                    required
+                  />
+                </div>
+                <div id="type">
+                  <label for="companyTypeInput">Company Type</label>
+                  <input
+                    type="text"
+                    id="companyTypeInput"
+                    name="companyType"
+                    required
+                  />
+                </div>
+              </div>
+              <div id="address">
+                <label for="businessAddressInput">Business Address</label>
+                <textarea
+                  id="businessAddressInput"
+                  name="businessAddress"
+                  required
+                ></textarea>
+              </div>
+              <div>
+                <label for="storageSizeInput">Storage size(m²)</label>
+                <input
+                  type="number"
+                  id="storageSizeInput"
+                  name="storageSize"
+                  required
+                />
+              </div>
+            </div>
+            <button type="submit">Complete Registration</button>
+          </form>
+        </section>
+
+      <!--STAFF SIGNUP FORM-->
+      <section id="staffSignup" class="form-section">
+        <div class="topText">
+          <h1>Staff Information</h1>
+          <p>Complete your Profile</p>
+        </div>
+        <form id="staffSignupForm">
+          <div class="form-container">
+            <div id="staffFullName">
+              <div>
+                <label for="staffFullNameInput">Full Name </label>
+                <input
+                  type="text"
+                  id="staffFullNameInput"
+                  name="staffFullName"
+                  required
+                />
+              </div>
+              <div id="staffPhone">
+                <label for="companyTypeInput">Phone Number</label>
+                <input
+                  type="tel"
+                  id="staffPhoneInput"
+                  name="staffPhone"
+                  required
+                />
+              </div>
+            </div>
+            <div id="staffRegistrationCode">
+              <label for="staffRegistrationCodeInput"
+                >Registration Code</label
+              >
+              <input
+              type="text"
+              placeholder="This code will be given to you by the company"
+                id="staffRegistrationCodeInput"
+                name="staffRegistrationCode"
+                required
+              ></input>
+            </div>
+            <div>
+              <label for="staffIdInput">Staff ID</label>
+              <input
+                type="text"
+                id="staffIdInput"
+                name="staffId"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit">Complete Registration</button>
+        </form>
+      </section>
+      <!--DRIVER SIGNUP FORM-->
+      <section id="driverSignup" class="form-section">
+  <div class="topText">
+    <h1>Driver Information</h1>
+    <p>Complete your Profile</p>
+  </div>
+  <form id="driverSignupForm">
+    <div class="form-container">
+      <div>
+        <label for="driverFullNameInput">Full Name</label>
+        <input type="text" id="driverFullNameInput" required />
+      </div>
+      <div>
+        <label for="driverPhoneInput">Phone Number</label>
+        <input type="tel" id="driverPhoneInput" required />
+      </div>
+      <div>
+        <label for="driverRegistrationCodeInput">Registration Code</label>
+        <input
+          type="text"
+          id="driverRegistrationCodeInput"
+          placeholder="This code will be given by the company"
+          required
+        />
+      </div>
+      <div>
+        <label for="driverIdInput">Driver ID</label>
+        <input type="text" id="driverIdInput" required />
+      </div>
+    </div>
+    <button type="submit">Complete Registration</button>
+  </form>
+</section>
+
+    </main>
+    <script>
+      const hash = window.location.hash;
+      if(hash) {
+        const formTargetSection = document.querySelector(hash);
+        if(formTargetSection) {
+          formTargetSection.classList.add("active");
+        }
+      } else {
+        window.location.href = "roleSelection.html";
+      }
+    </script>
+  </body>
+</html>
+

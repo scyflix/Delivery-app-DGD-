@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DGD | Staff Dashboard</title>
+    <meta
+      name="description"
+      content="DGD Staff Dashboard – Assign goods to drivers."
+    />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="button.css">
+  </head>
+  <body>
+    <main>
+      <section id="sidebar" aria-label="Staff navigation">
+        <div class="heading">
+          <button type="button" id="sidebarIcon" class="normalbtn" onclick="togglesidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <h2>DGD</h2>
+        </div>
+        <nav>
+          <a href="staff-dashboard.html" aria-current="page">Dashboard</a>
+          <a href="#">Assigned today</a>
+          <a href="#">Assign To Driver</a>
+        </nav>
+      </section>
+      <section id="mainContent">
+        <div class="heading">
+          <button class="normalbtn" id="sidebarIcon" onclick="togglesidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <section id="intro">
+            <h1>Staff Dashboard</h1>
+            <p>Manage and assign incoming goods</p>
+          </section>
+        </div>
+        <section id="statusCard-container">
+          <!--numbers will change dynamically as info changes-->
+          <div class="statusCards" id="deliveredTodayCount">
+            <p>Delivered Today</p>
+            <h2>0</h2>
+          </div>
+          <div class="statusCards" id="pendingCount">
+            <p>Pending processing</p>
+            <h2>0</h2>
+          </div>
+          <div class="statusCards" id="inTransitCount">
+            <p>In Transit</p>
+            <h2>0</h2>
+          </div>
+          <div class="statusCards" id="inProgressCount">
+            <p>In Progress</p>
+            <h2>0</h2>
+          </div>
+        </section>
+        <section id="processGoods-container">
+          <section id="processGoods">
+            <div id="processGoodsHeader">
+              <h3>Process Goods</h3>
+            </div>
+            <hr />
+            <p style="color: rgb(125, 120, 120); text-align: center;">Nothing to show yet</p>
+            <button id="viewGoods" type="button">View Goods</button>
+          </section>
+      </section>
+    </main>
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      function togglesidebar() {
+        sidebar.classList.toggle("show");
+        
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #eaf3ff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+main {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+/*To make the menuIcon and Header align on straight line*/
+.heading {
+  display: flex;
+  align-items: baseline;
+}
+#intro {
+  margin: 0 10px;
+}
+#mainContent {
+  flex: 1;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DGD | Company Dashboard</title>
+    <meta
+      name="description"
+      content="DGD Company Dashboard – manage deliveries and storage easily."
+    />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="cards.css" />
+  </head>
+  <body>
+    <main>
+      <section id="sidebar" aria-label="Company navigation">
+        <div class="heading">
+          <div id="sidebarIcon" onclick="togglesidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <h2>DGD</h2>
+        </div>
+        <nav>
+          <a href="company-dashboard.html">Dashboard</a>
+          <a href="#">Submit Goods</a>
+          <a href="#">My Deliveries</a>
+        </nav>
+      </section>
+      <section id="mainContent">
+        <div class="heading">
+          <div id="sidebarIcon" onclick="togglesidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <section id="intro">
+            <h1>Company Dashboard</h1>
+            <p>Manage your storage and deliveries</p>
+          </section>
+        </div>
+        <section id="statusCard-container">
+          <!--numbers will change dynamically as info changes-->
+          <div class="statusCards" id="totalDeliveriesCount">
+            <p>Total Deliveries</p>
+            <h2>0</h2>
+          </div>
+          <div class="statusCards" id="pendingCount">
+            <p>Pending</p>
+            <h2>0</h2>
+          </div>
+          <div class="statusCards" id="inTransitCount">
+            <p>In Transit</p>
+            <h2>0</h2>
+          </div>
+          <div class="statusCards" id="deliveredCount">
+            <p>Delivered</p>
+            <h2>0</h2>
+          </div>
+        </section>
+        <section id="recentandstorageinfo-container">
+          <section id="recentDeliveries">
+            <div id="recentsheader">
+              <h3>Recent Deliveries</h3>
+              <button>View All</button>
+            </div>
+            <hr />
+            <div id="recents">
+              <!--List of 3 or 4 most recent deliveries-->
+              <p style="color: rgb(191, 191, 191)">Nothing to show yet</p>
+            </div>
+          </section>
+          <section id="storageInfo-container">
+            <h3>Storage Information</h3>
+            <!--All information will be shown here based on the name user enters on registration-->
+            <hr />
+            <div id="storageInfo">
+              <p>Company Name</p>
+              <h4 id="companyName"></h4>
+              <p>Storage size(m²)</p>
+              <h4 id="storageSize"></h4>
+              <p>Contact Person</p>
+              <h4 id="contactPerson"></h4>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      function togglesidebar() {
+        sidebar.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
