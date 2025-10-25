@@ -62,7 +62,7 @@ section {
 .account-role {
   border-radius: 20px;
   width: 350px;
-  height: 450px;
+  min-height: 450px;
   max-height: 500px;
   background-color: white;
   margin: 15px;
