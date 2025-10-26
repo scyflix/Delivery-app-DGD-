@@ -48,7 +48,7 @@
     border-radius: 10px;
     width: 25px;
     height: 3px;
-    margin: 5px 2px;
+    margin: 5px 5px;
     background-color: #4285f4;
   }
   #sidebar.show {
@@ -62,6 +62,8 @@
     top: 0;
     left: 0;
     height: 100vh;
+    min-width: 30vw;
+    width: 50vw;
     z-index: 100;
   }
 }

@@ -48,6 +48,7 @@ button {
   border: none;
   border-radius: 5px;
   font-weight: bold;
+  transition: all 0.4s ease;
 }
 button:hover {
   background-color: #3367d6;

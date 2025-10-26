@@ -132,7 +132,10 @@
       });
       loginForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        alert("Button was just clicked. Why!");
+        alert("Welcome back! You will be redirected to select a role in a bit");
+        setTimeout(() => {
+          window.location.href = "roleSelection.html";
+        }, 2000);
       });
       function showSignup() {
         signupForm.style.display = "flex";

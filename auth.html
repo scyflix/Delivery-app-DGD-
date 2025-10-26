@@ -196,8 +196,14 @@
           formTargetSection.classList.add("active");
         }
       } else {
+        alert("Please select a role first")
         window.location.href = "roleSelection.html";
       }
+      const companySignupForm = document.getElementById("companySignupForm");
+      companySignupForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        window.location.href = "company-dashboard.html";
+      })
     </script>
   </body>
 </html>

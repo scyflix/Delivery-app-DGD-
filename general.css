@@ -5,6 +5,7 @@ body {
   background-color: #eaf3ff;
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
+  margin: 0;
 }
 main {
   display: flex;
