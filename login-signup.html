@@ -28,6 +28,7 @@
     <!-- LOGIN FORM -->
     <form id="loginForm">
       <h1>Login</h1>
+      <p id="errormsg"></p>
       <fieldset>
         <legend>
           <label for="email">Email</label>
@@ -95,7 +96,7 @@
         </legend>
         <input type="password" id="signupConfirmPassword" />
       </fieldset>
-      <button type="submit">Login</button>
+      <button type="submit">Signup</button>
 
       <button class="google-btn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
@@ -123,20 +124,80 @@
       </p>
     </form>
     <script>
+      //Select forms
       const loginForm = document.getElementById("loginForm");
       const signupForm = document.getElementById("signupForm");
-
+      //determine what happens after button click
       signupForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        alert("Button was just clicked. Why!");
+        //get signup form input
+        const fullName = document.getElementById("fullName").value.trim();
+        const signupEmail = document.getElementById("signupEmail").value.trim();
+        const signupPassword = document
+          .getElementById("signupPassword")
+          .value.trim();
+        const signupConfirmPassword = document
+          .getElementById("signupConfirmPassword")
+          .value.trim();
+        //Validate
+        if (
+          !fullName ||
+          !signupEmail ||
+          !signupPassword ||
+          !signupConfirmPassword
+        ) {
+          alert("please fill the form");
+          return;
+        } else if (signupPassword !== signupConfirmPassword) {
+          alert("Your confirm password does not match");
+          return;
+        }
+        //create user data
+        const user = {
+          fullName,
+          email: signupEmail,
+          password: signupPassword,
+        };
+        localStorage.setItem("user", JSON.stringify(user));
+        window.location.href = "landing.html";
       });
+      //check login info
       loginForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        alert("Welcome back! You will be redirected to select a role in a bit");
-        setTimeout(() => {
-          window.location.href = "roleSelection.html";
-        }, 2000);
+        //get login form input
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        //get data from local storage
+        const userData = JSON.parse(localStorage.getItem("user"));
+
+        const errormsg = document.getElementById("errormsg");
+        //login confirmation
+        if (!userData) {
+          errormsg.style.color = "red";
+          errormsg.innerText = "Please signup first";
+          return;
+        } else if (!email || !password) {
+          errormsg.style.color = "red";
+          errormsg.innerText = "Please fill the form";
+          return;
+        } else if (email !== userData.email) {
+          errormsg.style.color = "red";
+          errormsg.innerText = "Email is wrong";
+          return;
+        } else if (password !== userData.password) {
+          errormsg.style.color = "red";
+          errormsg.innerText = "Password is wrong";
+          return;
+        } else {
+          errormsg.style.color = "green";
+          errormsg.innerText = "Welcome back";
+          setTimeout(() => {
+            window.location.href = "roleSelection.html";
+          }, 2000);
+          return;
+        }
       });
+
       function showSignup() {
         signupForm.style.display = "flex";
         loginForm.style.display = "none";

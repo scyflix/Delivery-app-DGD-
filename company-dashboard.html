@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="nav.css" />
     <link rel="stylesheet" href="cards.css" />
     <link rel="stylesheet" href="button.css" />
+    <link rel="stylesheet" href="action.css" />
   </head>
   <body>
     <main>
@@ -47,6 +48,15 @@
           <a href="#">Submit Goods</a>
           <a href="#">My Deliveries</a>
         </nav>
+        <div id="pagebottom">
+          <p id="username"></p>
+          <div id="actionbtn">
+            <button type="button" id="logoutbtn">Logout</button>
+            <button style="background-color: red" type="button" id="delAcctbtn">
+              Delete Account
+            </button>
+          </div>
+        </div>
       </section>
       <section id="mainContent">
         <div class="heading">
@@ -112,6 +122,40 @@
       function togglesidebar() {
         sidebar.classList.toggle("show");
       }
+
+      //get data from local storage
+      const userData = JSON.parse(localStorage.getItem("user"));
+      const username = document.getElementById("username");
+      const logoutbtn = document.getElementById("logoutbtn");
+      const delAcctbtn = document.getElementById("delAcctbtn");
+      if (!userData) {
+        logoutbtn.style.display = "none";
+        window.location.href = "login-signup.html";
+      } else {
+        username.innerText = `${userData.fullName}`;
+      }
+      logoutbtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        logoutbtn.style.display = "none";
+        delAcctbtn.style.display = "none";
+
+        username.innerText = "You are not signedin";
+        setTimeout(() => {
+          window.location.href = "login-signup.html";
+        }, 2000);
+        return;
+      });
+      delAcctbtn.addEventListener("click", function (event) {
+        confirm("Are you sure you want to delete account");
+        logoutbtn.style.display = "none";
+        delAcctbtn.style.display = "none";
+        username.innerText = "Account deleted";
+        localStorage.clear("userData");
+        setTimeout(() => {
+          window.location.href = "login-signup.html";
+        }, 2000);
+        return;
+      });
     </script>
   </body>
 </html>

@@ -2,13 +2,21 @@ body {
   background-color: #eaf3ff;
   font-family: "Open Sans", sans-serif;
   font-size: large;
+  line-height: 16px;
+  color: #0a172b;
 }
 main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+h1 {
+  font-size: 40px;
   text-align: center;
+}
+h3 {
+  color: #4a5b75;
 }
 #logo {
   width: 150px;
@@ -21,109 +29,62 @@ main {
 #logo:hover {
   transform: scale(1.05);
 }
-h1 {
-  font-size: 40px;
+#button {
+  text-decoration: none;
+  border: 2px solid black;
+  width: 300px;
+  text-align: center;
+  padding: 30px;
+  background-color: #2d7ff9;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  transition: background-color 0.6s ease;
 }
-h2 {
-  font-size: 32px;
+#button:hover {
+  background-color: #4a92ff;
 }
-h3 {
-  font-size: 24px;
+#services h2 {
+  text-align: center;
+  margin-top: 70px;
 }
-ul {
-  text-align: start;
+p {
+  line-height: 1.6;
 }
-#company-list li::marker {
-  color: rgb(14, 180, 14);
-  font-size: 30px;
+
+@media screen and (max-width: 800px) {
+  #offerContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  #offers {
+    width: 85vw;
+  }
 }
-#staff-list li::marker {
-  color: blue;
-  font-size: 30px;
-}
-#driver-list li::marker {
-  color: purple;
-  font-size: 30px;
-}
-section {
-  margin: 10px auto;
-}
-#intro {
-  margin: 30px 50px 30px 50px;
-}
-#all-roles {
-  max-width: 90vw;
+#offerContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
   margin: 20px;
 }
-.account-role {
-  border-radius: 20px;
-  width: 350px;
-  min-height: 450px;
-  max-height: 500px;
-  background-color: white;
-  margin: 15px;
-  padding: 15px;
-  font-size: large;
-  border: 2px solid black;
-  transition: all 0.9s ease;
+.offers {
+  min-height: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 10px 20px;
+  border: 1px solid #d3e4ff;
+  transition: transform 0.4s ease, background-color 0.4s ease;
 }
-.account-role:hover {
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-  transition: box-shadow, transform 0.7s;
+.offers:hover {
+  transform: scale(1.04);
+  background-color: #c2dcfe;
 }
-#companyRole {
-  border-top: 5px solid rgb(14, 180, 14);
-}
-
-#staffRole {
-  border-top: 5px solid blue;
-}
-
-#driverRole {
-  border-top: 5px solid purple;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-@media (max-width: 800px) {
-  .account-role {
-    width: 80vw;
-    height: 300px;
-    background-color: white;
-    margin: 35px auto;
-  }
-  #all-roles {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 20px;
-  }
-  button {
-    width: 80%;
-    height: 50px;
-    margin: 3px 30px;
-    background-color: #4285f4;
-    color: white;
-    font-size: 16px;
-    font-weight: bolder;
-  }
-}
-button {
-  width: 80%;
-  height: 50px;
-  margin: 2px 30px 10px 30px;
-  background-color: #4285f4;
-  color: white;
-  font-size: 16px;
-  font-weight: bolder;
-}
-button:hover {
-  background-color: #6ca4ff;
+footer {
+  text-align: center;
+  margin-top: 40px;
+  background-color: #8eb7f1;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  padding: 20px 0;
 }

@@ -41,7 +41,7 @@
     display: block;
     font-weight: bold;
     cursor: pointer;
-    margin-right: 10px;
+    margin: 10px;
   }
   #sidebarIcon span {
     display: block;

@@ -26,19 +26,32 @@
       content="DGD – Streamlined delivery and storage management for businesses."
     />
     <title>DGD | Deliver with confidence</title>
-    <link rel="stylesheet" href="landing.css" />
+    <link rel="stylesheet" href="role.css" />
+    <style>
+      #actionbtn {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 90vw;
+      }
+      #logoutbtn,
+      #delAcctbtn {
+        width: 40%;
+        flex-grow: 1;
+      }
+    </style>
   </head>
   <body>
     <main>
-      <img
-        id="logo"
-        src="https://res.cloudinary.com/dc1bmavl5/image/upload/v1759858199/export202510041852437730_tcpyhr.svg"
-      />
-      <section id="intro">
-        <h1>Welcome to DGD</h1>
-        <p>Complete delivery and storage management solution for businesses</p>
-      </section>
       <section>
+        <p id="username"></p>
+        <div id="actionbtn">
+          <button type="button" id="logoutbtn">Logout</button>
+          <button style="background-color: red" type="button" id="delAcctbtn">
+            Delete Account
+          </button>
+        </div>
+
         <h2>Choose Your Role</h2>
         <p>Select how you will be using DGD</p>
       </section>
@@ -81,5 +94,6 @@
         </section>
       </div>
     </main>
+    <script src="app.js"></script>
   </body>
 </html>

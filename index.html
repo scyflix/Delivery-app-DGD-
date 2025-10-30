@@ -37,8 +37,10 @@
       }
 
       .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
         gap: 20px;
         width: 100%;
         max-width: 900px;
@@ -96,6 +98,12 @@
 
   <body>
     <h1>DGD Project Pages</h1>
+ <div class="cards">
+      <div class="card">
+        <h2>Landing Page</h2>
+        <p>See our services</p>
+        <a href="landing.html" target="_blank">Open Page</a>
+      </div>
 
     <div class="cards">
       <div class="card">
